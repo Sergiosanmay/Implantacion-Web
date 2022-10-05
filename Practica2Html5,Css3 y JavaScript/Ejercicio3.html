@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+ <meta charset="utf-8">
+ <title></title>
+ <style>
+     fieldset{
+         background-color: whitesmoke;
+         margin:20px;
+     }
+     input[type=button]{
+         color:white;
+         background-color: black;
+         
+     }
+     div{
+         text-align: center;
+     }
+ </style>
+ <script>
+     function seleccionar()
+     {
+         var nota=0
+        if(document.form.escuderia[0].checked)
+        nota=nota+1
+        if(document.form.piloto[2].checked)
+        nota=nota+1
+        if(document.form.circuito[3].checked)
+        nota=nota+1
+        
+        alert("Esta es su nota final " + nota )
+        if(nota>=1.5){
+            alert("Has Aprobado")
+        }
+        if(nota<1.5){
+            alert("Lo siento has suspendido prueba otra vez")
+        }
+     }
+
+ </script>
+ <body>
+     <form name="form">
+         <fieldset>
+             ¿Cual es la mejor escuderia F1?<br><br>
+             Seleccione una:<br><br>
+            <input type="radio" name="escuderia" >a.Ferrari<br><br>
+            <input type="radio" name="escuderia" >b.Red Bull<br><br>
+            <input type="radio" name="escuderia" >c.Mercedes<br><br>
+            <input type="radio" name="escuderia" >d.Alpine<br><br>
+            <input type="radio" name="escuderia" >No seleccionar <br><br>
+         </fieldset>
+         <fieldset>
+             ¿Cual es el mejor piloto?<br><br>
+            Seleccione una:<br><br>
+            <input type="radio" name="piloto" >a.Vettel<br><br>
+            <input type="radio" name="piloto" >b.Leclerc<br><br>
+            <input type="radio" name="piloto" >c.Alonso<br><br>
+            <input type="radio" name="piloto" >d.Verstappen<br><br>
+            <input type="radio" name="piloto" >No seleccionar<br><br>
+         </fieldset>
+         <fieldset>
+             ¿Que circuito es mejor?<br><br>
+            Seleccione una:<br><br>
+            <input type="radio" name="circuito" >a.Marina Bay<br><br>
+            <input type="radio" name="circuito" >b.Suzuka<br><br>
+            <input type="radio" name="circuito" >c.Monaco<br><br>
+            <input type="radio" name="circuito" >d.Monza<br><br>
+            <input type="radio" name="circuito" >No seleccionar<br><br>
+         </fieldset>
+         <div><input type="button"  value="Enviar" onclick="seleccionar()"></div>
+     </form>
+ </body>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+ <meta charset="utf-8">
+ <title></title>
+ <style>
+   *  {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+.container {
+    margin-inline: 30%;
+}
+h1, form, a {
+    margin: 10px 5px;
+}
+h1 {
+    background-color: orange;
+    color: blue;
+    font-weight: 500;
+    font-size: larger;
+    display: inline-block;
+    
+}
+form {
+    padding: 10px;
+    border: solid 7px black;
+    background-color: #ffff00;
+}
+form > div {
+    margin: 5px;
+}
+label, input, select, p{
+    display: inline-block;
+}
+label {
+    width: 40%;
+    text-align: center;
+}
+input, select {
+    font-size: 14px;
+}
+
+
+#numAfiliadoInput01 {
+    width: 100px;
+}
+#numAfiliadoInput02 {
+    width: 50px;
+}
+ </style>
+ <script>
+    function formulario()
+    {
+            nombre = document.getElementById("nombre").value;
+            primerApellido = document.getElementById("primerApe").value;
+            segundoApellido = document.getElementById("segundoApe").value;
+            correo = document.getElementById("correo").value;
+            selectAfiliado = document.getElementById("numAfiliadoSelect").selectedIndex;
+            valueSelecAfiliado = document.getElementById("numAfiliadoSelect").options[selectAfiliado].value;
+            numAfiliadoUno = document.getElementById("numAfiliadoInput01").value;
+            numAfiliadoDos = document.getElementById("numAfiliadoInput02").value;
+
+            if (nombre.length == 0) {
+                alert("El campo nombre se encuentra vacio");
+            }
+            if (primerApellido.length == 0) {
+                alert("El campo primer apellido se encuentra vacio");
+            }
+            if (segundoApellido.length == 0) {
+                alert("El campo segundo apellido se encuentra vacio");
+            } 
+            if (correo.length == 0) {
+                alert("El campo correo se encuentra vacio");
+            }
+            if (correo.indexOf("@")==-1)
+            {
+                alert("El correo no tiene un formato correo ")
+            }
+
+            if(selectAfiliado == 0) {
+                alert("Debe seleccionar algo en el campo numero de afiliado de la S.S.");
+            }
+
+            if (numAfiliadoUno.length != 7) {
+                alert("El primer numero de SS debe ser un número de 7 dígitos")
+            }
+            if (numAfiliadoDos.length != 1 && numAfiliadoDos != 2 ) {
+                alert("El segundo numero de SS debe ser un número de 1 o 2 dígitos")
+            }
+            
+
+        }
+
+    </script>
+ <div class="container">
+    <div class="title">
+        <h1>Solicitud del Informe de Vida Laboral</h1>
+    </div>
+    <div class="formulario">
+        <form>
+            <div class="nombreForm">
+                <label for="">Nombre:</label>
+                <input type="text" name="" id="nombre">
+            </div>
+            <div class="primerApeForm">
+                <label for="">Primer Apellido:</label>
+                <input type="text" name="" id="primerApe">
+            </div>
+            <div class="segundoApeForm">
+                <label for="">Segundo Apellido:</label>
+                <input type="text" name="" id="segundoApe">
+            </div>
+            <div class="correoForm">
+                <label for="">Correo electronico:</label>
+                <input type="text" name="" id="correo">
+            </div>
+            <div class="numAfiliadoForm">
+                <label for="">Numero de afiliado a la S.S.:</label>
+                <select id="numAfiliadoSelect">
+                    <option value="">A Coruña</option>
+                    <option value="A Coruña">Madrid</option>
+                </select>
+                <p>/</p>
+                <input type="number" name="" id="numAfiliadoInput01">
+                <p>/</p>
+                <input type="number" name="" id="numAfiliadoInput02">
+
+            </div>
+
+        </form>
+        <div>
+            <a href="#" onclick="formulario()">Enviar</a>
+            <a href="#" >Borrar</a>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+ <meta charset="utf-8">
+ <title></title>
+ <style>     div{
+         background-color: red;
+         width: 280px;
+         height: 300px;
+         color:black;
+     }
+ </style>
+ <script type="text/javascript">
+     function cambiar_color()
+     {
+        color=prompt("Que quieres poner de color de fondo");
+         document.getElementById("contenido").style.background=color;      
+     }
+
+     function cambiar_texto()
+     {
+         texto=prompt("Que quieres poner en el texto");
+         document.getElementById("contenido").innerHTML=texto;
+     }
+     function cambiar_letra()
+     {
+        letra=prompt("Que tipo de letra quieres");
+        color_letra=prompt("Color de la letra")
+         document.getElementById("contenido").style.fontFamily=letra;
+         document.getElementById("contenido").style.color=color_letra;
+     }
+ </script>
+ <body>
+     <div id="contenido">Este es el contenido del div1</div>
+     <input type="button" id="texto" value="Cambiar texto" onclick="cambiar_texto()"><br>
+     <input type="button" id="fondo" value="Cambiar color de fondo" onclick="cambiar_color()"><br>
+     <input type="button" id="letra" value="Cambiar tipo y color de letra" onclick="cambiar_letra()"><br><br>
+     
+
+    
+    </body>

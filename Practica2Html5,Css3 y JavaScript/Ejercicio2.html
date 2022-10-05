@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+ <meta charset="utf-8">
+ <title></title>
+ <script>
+     function calcular()
+     {
+         var coche=12000
+
+        if(document.form.motor[0].checked)
+             dato1=coche
+        if(document.form.motor[1].checked)
+            dato1=coche+1500
+        if(document.form.motor[2].checked)
+            dato1=coche+3000
+        
+        if(document.form.puertas[0].checked)
+            if(document.form.motor[0].checked)
+            dato2=dato1-2000
+            else{
+                alert("Solo se puede selecionar con gasolina")
+                location.reload()
+            }
+       if(document.form.puertas[1].checked)
+            dato2=dato1
+        if(document.form.puertas[2].checked)
+            dato2=dato1+1500
+
+        if(document.form.pintura[0].checked)
+            dato3=dato2
+        if(document.form.pintura[1].checked)
+            dato3=dato2
+        if(document.form.pintura[2].checked)
+            dato3=dato2
+        if(document.form.pintura[3].checked)
+            dato3=dato2-500
+        if(document.form.pintura[4].checked)
+            dato3=dato2-600
+        
+        var dato4=dato3
+            if(document.form.accesorio1.checked)
+
+                if(document.form.pintura[0].checked || (document.form.pintura[1].checked)
+                    || document.form.pintura[2].checked)
+                    
+                dato4=dato4+750
+                else{
+                    alert("Solo se puede seleccionar para color rojo, verde o naranja")
+                    location.reload()
+            }
+
+            if(document.form.accesorio2.checked)
+                dato4=dato4+200
+            if(document.form.accesorio3.checked)
+                dato4=dato4+800
+            if(document.form.accesorio4.checked)
+                dato4=dato4+340
+            if(document.form.accesorio5.checked)
+                if(document.form.puertas[2].checked)
+                dato4=dato4+800
+                else{
+                    alert("Esto solo se puede sellecionar con coche familiar")
+                    location.reload()
+                }
+        document.getElementById("total").innerHTML=dato4
+        
+
+     }
+ </script>
+ <body>
+     <form name="form">
+         <fieldset>
+             Configuracion del Coche
+         </fieldset>
+         <fieldset>
+             Tipo de Motor<br>
+             <input type="radio" name="motor" value="gasolina">Gasolina
+             <input type="radio" name="motor" value="diesel">Diesel(+1500 E)
+             <input type="radio" name="motor" value="gasolina">Hibrido (+3000 E)
+         </fieldset>
+         <fieldset>
+             Tipo de Puertas<br>
+             <input type="radio" name="puertas" value="3_Puertas">3 Puertas(-2000 E) (Solo con Gasolina)
+             <input type="radio" name="puertas" value="5_Puertas">5 Puertas
+             <input type="radio" name="puertas" value="Familiar">Familiar (+1500 E)
+
+         </fieldset>
+         <fieldset>
+             Tipo de Pintura<br>
+             <input type="radio" name="pintura" value="Rojo">Rojo
+             <input type="radio" name="pintura" value="Verde">Verde
+             <input type="radio" name="pintura" value="Naranja">Naranja
+             <input type="radio" name="pintura" value="Blanco">Blanco(-500 E)
+             <input type="radio" name="pintura" value="Negro">Negro (-600 E)
+         </fieldset>
+         <fieldset>
+             Seleccionar las que se deseen:<br>
+             <input type="checkbox" name="accesorio1">Metalizada (+750 E) (Solo Rojo, Verde o Naranja)<br>
+             <input type="checkbox" name="accesorio2">LLantas (+200 E)<br>
+             <input type="checkbox" name="accesorio3">Climantizador (+800 E)<br>
+             <input type="checkbox" name="accesorio4">GPS (+340 E)<br>
+             <input type="checkbox" name="accesorio5">DVD (+800 E) (Solo modelo Familiar)
+         </fieldset>
+         <fieldset>
+             Total a Cobrar<br>
+             <input type="button"  value="Calcular" onclick="calcular()">
+             <span id="total"></span>
+         </fieldset>
+     </form>
+
+ </body>
